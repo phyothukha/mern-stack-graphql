@@ -3,7 +3,7 @@ import { startStandaloneServer } from "@apollo/server/standalone";
 const typeDefs = `#graphql
 #Comments in Graphql strings (such as this one) start with the hash (#) symbol.
 
-# This "Book" type defines  the queryable fields for every book in our data source.
+  # This "Book" type defines  the queryable fields for every book in our data source.
   type Book {
     title:String
     author:Author!
@@ -20,6 +20,9 @@ const typeDefs = `#graphql
     books:[Book]
   }
 
+  type Mutation {
+    addBook(title:String,author:String):Book
+  }
 `;
 const books = [
     {
